@@ -1,0 +1,21 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'          # запускать при push в любую ветку
+  pull_request:
+    branches:
+      - main          # запускать при PR в main
+
+jobs:
+  hello:
+    name: Hello CI
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Say hello
+        run: echo "Hello CI"
